@@ -1,5 +1,5 @@
 # Selenium imports
-from selenium_scraper import SeleniumClass
+from selenium_scraper import Scraper
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
@@ -17,7 +17,7 @@ def rdc():
     password = input("Enter your password:")
     beep = lambda x: os.system("echo -n '\a';sleep 0.2;" * x)
     url = "https://www.rueducommerce.fr/produit/be-quiet-new-product-20190123141548-71248041"
-    browser = SeleniumClass(headless=False).open_browser()
+    browser = Scraper(headless=False).open_browser()
     browser.get(url)
     time.sleep(2)
     ActionChains(browser).send_keys(Keys.ESCAPE).perform()
